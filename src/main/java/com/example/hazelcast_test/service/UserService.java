@@ -14,12 +14,12 @@ import java.util.Optional;
 public class UserService {
     private final UserRepository userRepository;
 
-    @Cacheable()
+    @Cacheable(value = "nickname", key = "#id")
     public Optional<User> getUser(String id){
         return userRepository.findById(id);
     }
 
-    @Cacheable()
+    @Cacheable(value = "nickname", key = "#id")
     public User updateUser(User user) {
         return userRepository.save(user);
     }

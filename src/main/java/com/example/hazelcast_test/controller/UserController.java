@@ -11,6 +11,7 @@ import java.util.Optional;
 @RequestMapping("api/user")
 @AllArgsConstructor
 public class UserController {
+
     private final UserService userService;
 
     @GetMapping

@@ -15,9 +15,6 @@ public class HazelCastService implements ClusterManager {
 
     public HazelCastService(){
         Config conf = new Config();
-        System.out.println("-------------------------------------------");
-        System.out.println(conf.getClusterName());
-        System.out.println("-------------------------------------------");
         instance = Hazelcast.newHazelcastInstance(conf);
     }
 
