@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@CrossOrigin(origins ="http://localhost:3000/")
 @RestController
 @RequestMapping("api/user")
 @AllArgsConstructor
@@ -16,7 +15,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
-    public Optional<User> getUser(@RequestBody User user){
+    public Optional<User> getUser(@RequestParam User user){
         return userService.getUser(user.getId());
     }
 
